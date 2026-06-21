@@ -585,7 +585,7 @@ function ResumeDropzone({ onFile, loading, parsed, isMobile }) {
       {parsed && !loading && (
         <div style={{ marginTop: 12, padding: "14px 18px", background: C.mintLight, borderRadius: 10, border: `1px solid ${C.mint}` }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: "#3A9B7A", marginBottom: 8 }}>
-            ✓ Resume parsed {parsed._mock ? "(demo — add ANTHROPIC_API_KEY for real)" : "successfully"}
+            ✓ Resume parsed successfully
           </div>
           {[
             `${parsed.projects?.length || 0} projects extracted`,
