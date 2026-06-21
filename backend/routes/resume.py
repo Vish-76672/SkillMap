@@ -20,7 +20,7 @@ MOCK_RESUME = {
         {"name": "Chat App", "tech_stack": ["Socket.io", "Express", "MongoDB"], "description": "Real-time chat"},
     ],
     "certifications": ["AWS Cloud Practitioner"],
-    "resume_quality_score": 62,
+    "resume_quality_score": 80,
     "resume_feedback": [
         "Add quantified achievements",
         "Include links to GitHub projects",
@@ -68,7 +68,7 @@ def extract_text(file_bytes: bytes) -> str:
 def parse_with_gemini(resume_text: str) -> dict:
     import google.generativeai as genai
     genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     response = model.generate_content(PROMPT + resume_text[:6000])
     raw = response.text.strip()
     # Strip markdown fences if present
